@@ -1,0 +1,9 @@
+[project]
+name = "safecompress-aya"
+version = "0.0.1"
+description = "Research scaffold for Lexsi 2026 PS11, circuit-guided safety-aware compression"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6,<7"]  # Other versions are captured per run; pin after compatibility validation.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,12 @@
+seed: 42
+splits:
+  discovery: data/processed/discovery.jsonl
+  calibration: data/processed/calibration.jsonl
+  validation: data/processed/validation.jsonl
+  test_safety: data/processed/xstest.jsonl
+  test_additional: data/processed/do_not_answer.jsonl
+  test_utility: data/processed/arc_challenge.jsonl
+rules:
+  exclude_test_from_discovery: true
+  normalized_deduplication: true
+  record_sha256_checksums: true

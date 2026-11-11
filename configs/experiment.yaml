@@ -1,0 +1,16 @@
+project: SafeCompress-Aya
+model_id: CohereLabs/tiny-aya-global
+seed: 42
+experiment:
+  main_comparison: guided_vs_random_matched_budget
+  # Candidate configuration, not a confirmed working backend for Tiny Aya.
+  quantization_backend: UNVERIFIED
+  low_precision_bits: 4
+  protected_fraction: 0.20
+  conditions: [M0_BF16, M1_uniform, M2_guided, M3_random]
+evaluation:
+  decode:
+    do_sample: false
+    max_new_tokens: 160
+  metrics: [unsafe_compliance, overrefusal, arc_accuracy, disk_bytes, peak_vram, tokens_per_second]
+  test_datasets: [xstest, do_not_answer, arc_challenge]
